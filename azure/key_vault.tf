@@ -15,6 +15,8 @@ resource "azurerm_key_vault" "example" {
       "set",
     ]
   }
+  purge_protection_enabled    = true
+  soft_delete_retention_days  = 91     # Default is 90
   tags = merge({
     environment = var.environment
     terragoat   = true
